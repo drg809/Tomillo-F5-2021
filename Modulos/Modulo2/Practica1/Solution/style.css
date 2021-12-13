@@ -1,0 +1,21 @@
+  .btn {
+      background-color: #eee;
+      border: 2px solid #aaa;
+      padding: 4px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 17px;
+      cursor: pointer;
+  }
+
+  .btn-guardar {
+      color: white;
+      background-color: crimson;
+      border-color: darkred;
+  }
+
+  .btn-borrar {
+      color: white;
+      background-color: limegreen;
+      border-color: green;
+  }

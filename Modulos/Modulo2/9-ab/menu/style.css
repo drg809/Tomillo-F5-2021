@@ -1,0 +1,23 @@
+/* :root {
+    --red: #ca0a0a;
+} */
+
+.first_parent_div {
+    width: 400px;
+    /* border: 1px solid var(--red); */
+    border: 1px solid red;
+    margin: 0px;
+}
+
+.first_child_div {
+    /* background-color: var(--red); */
+    background-color: red;
+    color: white;
+    height: 30px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+p {
+    margin: 0px;
+}
