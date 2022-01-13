@@ -1,0 +1,107 @@
+body {
+    margin-top: 10vh;
+    margin-left: 30vh;
+    margin-right: 30vh;
+    white-space: wrap;
+}
+
+#header {
+    padding-bottom: 50vh;
+}
+
+#projects {
+    padding-bottom:  50vh;
+}
+
+#project1:hover {
+    margin: 20px;
+    background-color: whitesmoke;
+}
+
+#project2:hover {
+    margin: 20px;
+    background-color: whitesmoke;
+}
+
+#project3:hover {
+    margin: 20px;
+    background-color: whitesmoke;
+}
+
+#concept1:hover {
+    background-color: whitesmoke;
+}
+
+
+#concept2:hover {
+    background-color: whitesmoke;
+}
+
+#concept3:hover {
+    background-color: whitesmoke;
+}
+
+#concept4:hover {
+    background-color: whitesmoke;
+}
+
+#concept5:hover {
+    background-color: whitesmoke;
+}
+
+#concept6:hover {
+    background-color: whitesmoke;
+}
+
+#galery{
+    padding-bottom: 20vh;
+}
+
+#img {
+    padding-left: 1vw;
+}
+
+form {
+    background-color: whitesmoke;
+    border: 1px solid white;
+
+}
+
+a {
+    color: black;
+}
+
+#experience {
+    font-size: small;
+    padding-bottom: 40vh;
+}
+
+#footer {
+    padding-top: 20vh;
+}
+
+h4 {
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 670px) {
+    body {
+     margin-left: auto;
+     margin-right: auto;
+     white-space: wrap;
+        
+    }
+    #experience {
+     text-align: center;
+     font-size: 20px;
+    }
+    h4 {
+        font-size: 3.5vw;
+    }
+    #projects {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 5vw;
+        text-align: center;
+    }
+  }
