@@ -39,7 +39,7 @@ window.onload = () => {
 
       //invocamos la funcion para descargar el archivo
       download("email.txt",tempText);
-
+      alert('hola coders')
       //ahora hay que mostrar un mensaje en la pantalla, os toca hacerlo a vosotros
 
    });
