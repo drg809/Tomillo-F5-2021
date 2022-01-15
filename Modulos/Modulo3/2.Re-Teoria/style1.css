@@ -1,0 +1,47 @@
+body {
+    background: rgba(238, 238, 238, 1);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second {
+    display: flex;
+}
+
+.text_span {
+    font-size: 50px;
+    font-family: "Abril Fatface";
+    font-weight: 400;
+    font-style: normal;
+}
+
+.light_blue {
+    color: rgb(77, 205, 198);
+}
+
+div.second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    height: 500px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    max-width: 25em;
+}
+
+.ad_text {
+    text-align: center;
+}
+
+div.second .btn {
+    border: 2px solid rgb(77, 205, 198);
+    padding: 10px;
+    border-radius: 25px;
+    color: rgb(77, 205, 198);
+}

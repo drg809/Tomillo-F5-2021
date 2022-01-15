@@ -1,0 +1,29 @@
+body {
+    background: rgba(238, 238, 238, 1);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.second {
+    height: 500px;
+    max-width: 25em;
+    padding: 0px 25px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.second .btn {
+    color: rgb(77, 205, 198);
+    border: 2px solid rgb(77, 205, 198);
+    padding: 15px;
+    border-radius: 25px;
+}

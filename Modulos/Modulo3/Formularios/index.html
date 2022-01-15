@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario Contacto</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://afarkas.github.io/webshim/demos/js-webshim/minified/extras/modernizr-custom.js"></script>
+    <script src="http://afarkas.github.io/webshim/demos/js-webshim/minified/polyfiller.js"></script>
+    <script>
+        $.webshims.polyfill();
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("form").submit(function() {
+                alert("Formulario Validado...");
+                return false;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Formulario Web</h1>
+    </header>
+    <fieldset>
+        <legend>Detalles Contacto</legend>
+        <!--novalidate si no se quiere validar-->
+        <form action="#">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" autofocus placeholder="Escribe tu nombre" name="nombre" required="required" pattern="[a-zA-Z\s]{5,}" />
+            <span class="invalid">*El nombre es requerido</span>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required placeholder="Escribe tu email" />
+            <span class="invalid">*El email es requerido</span>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" name="telefono" required placeholder="Escribe tu teléfono" />
+            <span class="invalid">*El teléfono es requerido</span>
+
+            <label for="pais">País:</label>
+            <input name="pais" list="paises" placeholder="Escribe tu país">
+            <datalist id="paises">
+                <option>Colombia</option>
+                <option>Ecuador</option>
+                <option>Per&uacute;</option>
+                <option>Bolivia</option>
+                <option>Nicaragua</option>
+                <option>Marruecos</option>
+                <option>España</option>
+                <option>otro</option>
+            </datalist>
+
+            <label>Edad:</label>
+            <input type="number" name="edad" min="18" max="65">
+
+            <label for="nacimiento">Fecha nacimiento: </label>
+            <input type="date" name="nacimiento" min="1900-01-01" max="3000-12-31" />
+
+            <div>
+                <input type="submit" value="Enviar" id="enviar">
+            </div>
+        </form>
+    </fieldset>
+
+</body>
+
+</html>
