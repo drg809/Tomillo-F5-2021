@@ -86,7 +86,7 @@ h4 {
 
 div.notification {
     background-color: #1fd21f;
-    position: absolute;
+    position: fixed;
     width: fit-content;
     padding: 2vh;
     top: 2vh;

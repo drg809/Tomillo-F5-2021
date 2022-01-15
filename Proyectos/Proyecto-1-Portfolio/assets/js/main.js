@@ -2,11 +2,6 @@ window.onload = () => {
    //capturamos el formulario
    let form = document.getElementById("form");
 
-   //código que se ejecuta a los tres segundos de haber sido leido
-   setTimeout(() => {
-      console.log('hola coders')     
-   }, 3000);
-
    //escuchamos el evento submit o onsubmit (pulsar el boton de enviar)
    form.addEventListener("submit", (e) => {
       //evitamos el comportamiento por defecto
@@ -41,6 +36,11 @@ window.onload = () => {
       download("email.txt",tempText);
 
       //ahora hay que mostrar un mensaje en la pantalla, os toca hacerlo a vosotros
-
+      document.getElementById("noti").style.display = 'block';
+      
+      //código que se ejecuta a los tres segundos de haber sido leido
+      setTimeout(function(){
+         document.getElementById("noti").style.display = 'none';
+      }, 5000);
    });
 }
