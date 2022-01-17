@@ -1,122 +1,179 @@
 body {
-    margin-top: 10vh;
-    margin-left: 30vh;
-    margin-right: 30vh;
-    white-space: wrap;
+  margin-left: 30vh;
+  margin-right: 30vh;
+  white-space: wrap;
 }
 
 #header {
-    padding-bottom: 50vh;
+  padding-bottom: 50vh;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black !important;
+  z-index: 1;
+}
+
+.sticky a {
+  color: white !important;
+}
+
+#container {
+  margin-top: 10vh;
 }
 
 #projects {
-    padding-bottom:  50vh;
+  padding-bottom: 50vh;
 }
 
 #project1:hover {
-    margin: 20px;
-    background-color: whitesmoke;
+  margin: 20px;
+  background-color: whitesmoke;
 }
 
 #project2:hover {
-    margin: 20px;
-    background-color: whitesmoke;
+  margin: 20px;
+  background-color: whitesmoke;
 }
 
 #project3:hover {
-    margin: 20px;
-    background-color: whitesmoke;
+  margin: 20px;
+  background-color: whitesmoke;
 }
 
 #concept1:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
-
 #concept2:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #concept3:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #concept4:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #concept5:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #concept6:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
-#galery{
-    padding-bottom: 20vh;
+#galery {
+  padding-bottom: 20vh;
 }
 
 #img {
-    padding-left: 1vw;
+  padding-left: 1vw;
 }
 
 form {
-    background-color: whitesmoke;
-    border: 1px solid white;
-
+  background-color: whitesmoke;
+  border: 1px solid white;
 }
 
 a {
-    color: black;
+  color: black;
 }
 
 #experience {
-    font-size: small;
-    padding-bottom: 40vh;
+  font-size: small;
+  padding-bottom: 40vh;
 }
 
 #footer {
-    padding-top: 20vh;
+  padding-top: 20vh;
 }
 
 h4 {
-    font-size: 1.5vw;
+  font-size: 1.5vw;
 }
 
 div.notification {
-    background-color: #1fd21f;
-    position: fixed;
-    width: fit-content;
-    padding: 2vh;
-    top: 2vh;
-    right: 0;
-    display: none;
+  background-color: #1fd21f;
+  position: fixed;
+  width: fit-content;
+  padding: 2vh;
+  top: 2vh;
+  right: 0;
+  z-index: 1;
 }
 
 div.notification p {
-    margin: 0;
-    color: white;
+  margin: 0;
+  color: white;
+  display: inline;
+}
+
+#noti__close {
+  color: white;
+  margin-left: 1vw;
+  cursor:pointer;
+}
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    height: 100px; 
+    border: 1px solid black;
+}
+
+#slide {
+    position: absolute;
+    left: -100px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transition: 1s;
+    background: blue;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 2s;
+}
+
+.wrapper:hover #slide {
+    transition: 1s;
+    right: 0;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 0;
+  }
 }
 
 @media screen and (max-width: 670px) {
-    body {
-     margin-left: auto;
-     margin-right: auto;
-     white-space: wrap;
-        
-    }
-    #experience {
-     text-align: center;
-     font-size: 20px;
-    }
-    h4 {
-        font-size: 3.5vw;
-    }
-    #projects {
-        display: flex;
-        flex-wrap: wrap;
-        font-size: 5vw;
-        text-align: center;
-    }
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    white-space: wrap;
   }
+  #experience {
+    text-align: center;
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 3.5vw;
+  }
+  #projects {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 5vw;
+    text-align: center;
+  }
+}
