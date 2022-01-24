@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba básica</title>
+    <style>
+        #showImg,
+        #hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <section>
+        <article>
+            <h1>Obtener datos del formulario</h1>
+            <p id="textoInput">Valor:</p>
+            <form id="formInput">
+                <input type="text" name="todo" id="todo" placeholder="Tarea">
+                <button type="submit">Enviar</button>
+            </form>
+        </article>
+        <article>
+            <h1>Cambiar el background</h1>
+            <p id="textoColor">Color: #ffffff</p>
+            <button id="bgc">Pulsa para cambiar background</button>
+            <button id="bgcReset">Color blanco</button>
+        </article>
+        <article>
+            <h1>Mostrar y ocultar</h1>
+            <button id="hide">Mostrar</button>
+            <button id="show">Ocultar</button>
+            <img id="showImg" src="./assets/img/show.jpg" alt="show">
+            <img id="hideImg" src="./assets/img/hide.png" alt="hide">
+        </article>
+    </section>
+</body>
+<script src="input.js" type="text/javascript"></script>
+<script src="bgc.js" type="text/javascript"></script>
+<script src="hide.js" type="text/javascript"></script>
+
+</html>
