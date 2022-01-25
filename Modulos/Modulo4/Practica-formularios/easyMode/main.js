@@ -1,21 +1,3 @@
-const todos = [{
-        'titlo': "Ir a escalar al puente",
-        'description': 'EN el puente del alamillo',
-        'fecha': '13/05/2021'
-    },
-    {
-        'titlo': "Ir a escalar al puente",
-        'description': 'EN el puente del alamillo',
-        'fecha': '13/05/2021'
-    },
-    {
-        'titlo': "Ir a escalar al puente",
-        'description': 'EN el puente del alamillo',
-        'fecha': '13/05/2021'
-    }
-
-];
-
 window.onload = () => {
     const form = document.getElementById('todo-form');
     form.onsubmit = (e) => {
