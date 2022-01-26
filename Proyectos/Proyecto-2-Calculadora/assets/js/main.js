@@ -1,6 +1,7 @@
 //Declaracion de variables
 var num1 = 0;
 var num2 = 0;
+var pantalla = 0;
 var opera;
 
 //Función que coloca el número presionado
@@ -11,7 +12,7 @@ function darNumero(numero) {
    } else {
       num1 += numero;
    }
-   refrescar();
+   refrescar(num1);
 }
 
 //Función que coloca la coma al presionar dicho botón
@@ -21,14 +22,14 @@ function darComa() {
    } else if (num1.indexOf('.') == -1) {
       num1 += '.';
    }
-   refrescar();
+   refrescar(num1);
 }
 
 //Función que coloca la C al presionar dicho botón
 function darC() {
    num1 = 0;
    num2 = 0;
-   refrescar();
+   refrescar(num1);
 }
 
 
@@ -59,10 +60,13 @@ function esIgual() {
    // evalua las posibles operaciones matemáticas a realizar
    switch (opera) {
       case 1:
+         pantalla = num1 + '+'+ num2 + '=' + (parseFloat(num1) + parseFloat(num2));
          num1 += num2;
          break;
       case 2:
+         pantalla = num1 + '-'+ num2 + '=' + (parseFloat(num1) - parseFloat(num2));
          num1 = num2 - num1;
+         
          break;
       case 3:
          num1 *= num2;
@@ -74,11 +78,11 @@ function esIgual() {
          num1 = Math.pow(num2, num1);
          break;
    }
-   refrescar();
+   refrescar(pantalla);
    num2 = parseFloat(num1);
    num1 = 0;
 }
 
-function refrescar() {
-   document.getElementById("valor_numero").value = num1;
+function refrescar(x) {
+   document.getElementById("valor_numero").value = x;
 }
