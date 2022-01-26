@@ -2,8 +2,9 @@
 var num1 = 0;
 var num2 = 0;
 var pantalla = 0;
+var historico = "1\n1";
 var opera;
-
+console.log(historico);
 //Función que coloca el número presionado
 function darNumero(numero) {
    console.log(numero);
