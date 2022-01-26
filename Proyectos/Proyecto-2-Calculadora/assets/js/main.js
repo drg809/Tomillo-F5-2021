@@ -5,6 +5,7 @@ var opera;
 
 //Función que coloca el número presionado
 function darNumero(numero) {
+   console.log(numero);
    if (num1 == 0 && num1 !== '0.') {
       num1 = numero;
    } else {
@@ -33,6 +34,7 @@ function darC() {
 
 //Esta función realiza las distintas operaciones aritméticas en función del botón pulsado
 function operar(valor) {
+   console.log(valor);
    if (num1 == 0) {
       num1 = parseFloat(document.getElementById("valor_numero").value);
    }
@@ -51,7 +53,10 @@ potencia = 5
 */
 
 function esIgual() {
+   console.log(num1);
+   // convertimos a comillas el numero para evitar un posible error por truncamiento, ya que al decir que un número con comillas es entero, perderá el valor fraccionado
    num1 = parseFloat(num1);
+   // evalua las posibles operaciones matemáticas a realizar
    switch (opera) {
       case 1:
          num1 += num2;
