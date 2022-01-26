@@ -24,31 +24,52 @@
       </nav>
    </header>
    <section>
-      <div class="container">
+      <div class="container calculator-grid text-center">
          <div class="row">
             <div class="col-12">
-               <h2>Calculadora</h2>
+               <h2>Calculadora inteligente</h2>
             </div>
-            <div class="col-6">
-               <input id="operators" type="text" name="operators" />
+            <div class="col-12 op__sections output">
+               <div data-previous-operand class="previous-operand"></div>
+               <div data-current-operand class="current-operand"></div>
             </div>
-            <div class="col-6">
+            <div class="col-12 op__sections">
                <div class="container">
-                  <div class="row">
-                     <div class="col-6">
-                        <button id="add">+</button>
-                        <button id="sub">-</button>
-                        <button id="mul">*</button>
+                  <div class="row op__buttons">
+                     <div class="col-12">
+                        <button data-all-clear class="span-two">AC</button>
+                        <button data-delete>DEL</button>
+                        <button data-number>.</button>
                      </div>
-                     <div class="col-6">
-                        <button id="add">/</button>
-                        <button id="sub">%</button>
-                        <button id="mul">**</button>
+                     <div class="col-12">
+                        <button data-number>1</button>
+                        <button data-number>2</button>
+                        <button data-number>3</button>
+                        <button data-number>4</button>
+                        <button data-number>5</button>
+                        <button data-number>6</button>
+                        <button data-number>7</button>
+                        <button data-number>8</button>
+                        <button data-number>9</button>
+                        
+                        <button data-number>0</button>
                      </div>
                   </div>
-                  <div class="row">
+                  <div class="row op__buttons">
+                     <div class="col-6">
+                        <button data-operation id="add">+</button>
+                        <button data-operation id="sub">-</button>
+                        <button data-operation id="mul">*</button>
+                     </div>
+                     <div class="col-6">
+                        <button data-operation id="add">/</button>
+                        <button data-operation id="sub">%</button>
+                        <button data-operation id="mul">^</button>
+                     </div>
+                  </div>
+                  <div class="row text-center">
                      <div class="col-12">
-                        <button id="res">=</button>
+                        <button data-equals id="res">=</button>
                      </div>
                   </div>
                </div>
