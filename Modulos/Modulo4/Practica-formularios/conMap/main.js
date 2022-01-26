@@ -2,12 +2,10 @@ const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 const render = () => {
     const todoList = document.getElementById('todo-list');
-    const todosTemplate = todos.map(t => '<li>' + t + '</li>');
-    //   const todosTemplate = todos.map(t => {
-    //       return '<li>' + t + '</li>';
-    //   });
+    const todosTemplate = todos.map(todo => {
+        return '<li>' + todo + '<i id="del'+todo.length+'" class="fa fa-trash"></i> <i id="mod'+todo.length+'" class="fa fa-pencil-alt"></i> </li>';
+    });
     todoList.innerHTML = todosTemplate.join('');
-
     const elementos = document.querySelectorAll('#todo-list li');
     elementos.forEach((elemento, i) => {
         elemento.addEventListener('click', () => {
@@ -16,6 +14,7 @@ const render = () => {
             actualizaTodos(todos);
             render(); //hacemos esto para actualizar nuestros indices en i, esto se conoce como recursividad
         });
+        console.log(elemento);
     });
 }
 

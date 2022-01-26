@@ -1,4 +1,5 @@
 window.onload = () => {
+    const todos = [];
     const form = document.getElementById('todo-form');
     form.onsubmit = (e) => {
         e.preventDefault();
@@ -7,10 +8,8 @@ window.onload = () => {
         todo.value = '';
         todos.push(todoText);
         const todoList = document.getElementById('todo-list');
-        console.log(todoList.innerHTML);
         for (let i = 0; i < todos.length; i++) {
             todoList.innerHTML += '<li>' + todos[i] + '</li>';
-            console.log(todoList.innerHTML);
         }
     }
 }
