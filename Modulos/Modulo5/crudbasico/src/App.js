@@ -5,6 +5,8 @@ import shortid from 'shortid';
 function App() {
   const [tarea, setTarea] = useState('');
   const [tareas, setTareas] = useState([]);
+  const [editando, setEditando] = useState(false);
+
 
   const agregarTarea = (e) => {
     e.preventDefault()
@@ -12,20 +14,31 @@ function App() {
       console.log('el campo esta en blanco')
       return
     }
+
     setTareas([
       ...tareas,
       { tarea, id: shortid.generate() }
     ])
     setTarea('')
   }
+
   const eliminarTarea = id => {
     const nuevasTareas = tareas.filter(x => x.id !== id)
     setTareas(nuevasTareas)
   }
 
-  const editar = () => {
-    console.log('editando tarea')
+  const editar = item => {
+    setTarea(item.tarea)
+    setEditando(true)
+  }
 
+  const editarTarea = e => {
+    e.preventDefault()
+    
+    //setTarea(item.tarea)
+    setEditando(true)
+    //const nuevasTareas = tareas.filter(x => x.id === item.id)
+    console.log('hola');
   }
 
 
@@ -57,9 +70,9 @@ function App() {
 
         <div className="col-4">
           <h4 className="text-center">
-            Agregar Tarea
+            {editando ? 'Editar tarea' : 'Agregar tarea'}
           </h4>
-          <form onSubmit={agregarTarea}>
+          <form onSubmit={editando ? editarTarea : agregarTarea}>
             <input
               type="text"
               className="form-control mb-2"
@@ -67,7 +80,11 @@ function App() {
               onChange={e => setTarea(e.target.value)}
               value={tarea}
             />
-            <button className="btn btn-dark btn-block" type="submit">Agregar</button>
+            {editando ?
+              (<button className="btn btn-success btn-block" type="submit"> Editar </button>)
+              :
+              (<button className="btn btn-dark btn-block" type="submit"> Agregar </button>)}
+
           </form>
         </div>
 
