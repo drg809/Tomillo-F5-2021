@@ -6,12 +6,15 @@ function App() {
   const [tarea, setTarea] = useState('');
   const [tareas, setTareas] = useState([]);
   const [editando, setEditando] = useState(false);
+  const [tareaId, setTareaId] = useState('');
+  const [error, setError] = useState('');
 
 
+  console.log(tareas.length)
   const agregarTarea = (e) => {
     e.preventDefault()
     if (!tarea.trim()) {
-      console.log('el campo esta en blanco')
+      setError('* Campo obligatorio')
       return
     }
 
@@ -23,22 +26,29 @@ function App() {
   }
 
   const eliminarTarea = id => {
-    const nuevasTareas = tareas.filter(x => x.id !== id)
+    const nuevasTareas = tareas.filter(tarea => tarea.id !== id)
     setTareas(nuevasTareas)
   }
 
   const editar = item => {
-    setTarea(item.tarea)
     setEditando(true)
+    setTarea(item.tarea)
+    setTareaId(item.id)
   }
 
   const editarTarea = e => {
     e.preventDefault()
-    
-    //setTarea(item.tarea)
-    setEditando(true)
-    //const nuevasTareas = tareas.filter(x => x.id === item.id)
-    console.log('hola');
+    if (!tarea.trim()) {
+      setError('* Campo obligatorio')
+      return
+    }
+
+    const nuevoArray = tareas.map(element => element.id === tareaId ? { id: tareaId, tarea } : element)
+    setTareas(nuevoArray)
+    setEditando(false)
+    setTarea('')
+    setTareaId('')
+
   }
 
 
@@ -50,21 +60,25 @@ function App() {
         <div className="col-8">
           <h4 className="text-center">Lista de Tareas</h4>
           <ul className="list-group">
-            {
-              tareas.map(item => (
-                <li className="list-group-item" key={item.id}>
-                  <span className="lead">{item.tarea}</span>
-                  <button
-                    className="btn btn-sm btn-danger float-right mx-2"
-                    onClick={() => eliminarTarea(item.id)}
-                  >Eliminar</button>
-                  <button
-                    className="btn btn-sm btn-warning float-right"
-                    onClick={() => editar(item)}
-                  >Editar</button>
-                </li>
-              ))
-            }
+            {tareas.length === 0 ? (
+              <li className="list-group-item">Introduce alguna tarea, por favor</li>
+            )
+              :
+              (
+                tareas.map(item => (
+                  <li className="list-group-item" key={item.id}>
+                    <span className="lead">{item.tarea}</span>
+                    <button
+                      className="btn btn-sm btn-danger float-right mx-2"
+                      onClick={() => eliminarTarea(item.id)}
+                    >Eliminar</button>
+                    <button
+                      className="btn btn-sm btn-warning float-right"
+                      onClick={() => editar(item)}
+                    >Editar</button>
+                  </li>
+                ))
+              )}
           </ul>
         </div>
 
@@ -73,6 +87,7 @@ function App() {
             {editando ? 'Editar tarea' : 'Agregar tarea'}
           </h4>
           <form onSubmit={editando ? editarTarea : agregarTarea}>
+            {error ? <span className='text-error'>{error}</span> : null}
             <input
               type="text"
               className="form-control mb-2"
